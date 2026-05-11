@@ -22,7 +22,9 @@ connectDb();
 // ---------- CORS configuration ----------
 const isProd = process.env.NODE_ENV === "production";
 const productionURL =
-  process.env.CLIENT_URL || "https://chatapp-yr2n.onrender.com";
+  process.env.CLIENT_URL ||
+  process.env.RENDER_EXTERNAL_URL ||
+  "https://chatapp-yr2n.onrender.com";
 
 app.use(
   cors({

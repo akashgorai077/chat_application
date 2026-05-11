@@ -20,7 +20,8 @@ const Message = ({ messageDetails, onMediaLoad }) => {
 
   const apiOrigin =
     import.meta.env.VITE_DB_ORIGIN ||
-    String(import.meta.env.VITE_DB_URL || "").replace(/\/api\/v1\/?$/, "");
+    String(import.meta.env.VITE_DB_URL || "").replace(/\/api\/v1\/?$/, "") ||
+    window.location.origin;
 
   // CALL MESSAGE
   if (isCallMessage) {

@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: chat-application
+    runtime: node
+    plan: free
+    region: singapore
+    repo: https://github.com/akashgorai077/chat_application
+    branch: main
+    buildCommand: npm run build
+    startCommand: npm start
+    autoDeploy: true
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: JWT_EXPIRES
+        value: 7d
+      - key: COOKIE_EXPIRES
+        value: 7
+      - key: MONGODB_URL
+        sync: false

@@ -24,7 +24,7 @@ function Navbar() {
             onClick={() => navigate("/")}
           >
             <img src={chat} alt="App Logo" className="h-10 w-10 shrink-0 object-contain sm:h-11 sm:w-11" />
-            <span className="truncate text-xl font-bold text-base-content sm:text-2xl">WeChat</span>
+            <span className="truncate text-xl font-bold text-base-content sm:text-2xl">WeChatting</span>
           </button>
 
           <div className="hidden items-center gap-2 md:flex">

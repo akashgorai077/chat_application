@@ -1,4 +1,3 @@
-
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -50,7 +49,7 @@ app.use(
       return callback(new Error("Not allowed by CORS"));
     },
     credentials: true,
-  })
+  }),
 );
 
 // ---------- Middleware ----------
@@ -87,3 +86,5 @@ server.listen(PORT, "0.0.0.0", () => {
   console.log(`🌍 Mode: ${process.env.NODE_ENV || "development"}`);
   console.log(`✅ Production URL: ${productionURL}`);
 });
+//  kill -9 $(lsof -t -i:5111)
+//  kill -9 $(lsof -t -i:5173)

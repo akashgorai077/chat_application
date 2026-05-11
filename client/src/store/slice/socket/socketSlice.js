@@ -10,7 +10,7 @@ export const socketSlice = createSlice({
   initialState,
   reducers: {
     initializeSocket: (state, action) => {
-      console.log("hello");
+      // Same-origin (monolith on Render): omit URL. Split deploy: set VITE_DB_ORIGIN to API origin (must match server CORS / Socket allowlist for the tab URL).
       const socket = io(import.meta.env.VITE_DB_ORIGIN || undefined, {
         query: {
           userId: action.payload,

@@ -10,6 +10,10 @@ import { fileURLToPath } from "url";
 
 import connectDb from "./db/connection1.js";
 import { app as socketApp, server } from "./socket/socket.js";
+import {
+  getPrimaryProductionOrigin,
+  isOriginAllowedForCors,
+} from "./utilities/allowedOrigins.js";
 
 // ---------- Express app ----------
 const app = socketApp;
@@ -19,29 +23,14 @@ const PORT = process.env.PORT || 5111;
 connectDb();
 
 // ---------- CORS configuration ----------
-const isProd = process.env.NODE_ENV === "production";
-const productionURL =
-  process.env.CLIENT_URL ||
-  process.env.RENDER_EXTERNAL_URL ||
-  "https://chatapp-yr2n.onrender.com";
+const productionURL = getPrimaryProductionOrigin();
 
 app.use(
   cors({
     origin: (origin, callback) => {
       console.log("🌐 Incoming Origin:", origin);
 
-      // Allow Postman / mobile apps / requests with no origin
-      if (!origin) {
-        return callback(null, true);
-      }
-
-      // Allow localhost ports for local multi-tab/multi-browser testing
-      if (/^http:\/\/localhost:\d+$/.test(origin)) {
-        return callback(null, true);
-      }
-
-      // Allow deployed frontend in production
-      if (origin === productionURL) {
+      if (isOriginAllowedForCors(origin)) {
         return callback(null, true);
       }
 

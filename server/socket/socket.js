@@ -6,20 +6,17 @@ import express from "express";
 import { randomUUID } from "crypto";
 import Message from "../models/messageModel.js";
 import Conversation from "../models/conversationModel.js";
+import { isOriginAllowedForCors } from "../utilities/allowedOrigins.js";
 
 const app = express();
 const server = http.createServer(app);
-const isLocalhostOrigin = (origin = "") => /^http:\/\/localhost:\d+$/.test(origin);
 const io = new Server(server, {
   cors: {
     origin: (origin, callback) => {
-      if (!origin) return callback(null, true);
-      if (isLocalhostOrigin(origin)) return callback(null, true);
-
-      if (process.env.CLIENT_URL && origin === process.env.CLIENT_URL) {
+      if (isOriginAllowedForCors(origin)) {
         return callback(null, true);
       }
-
+      console.error("Socket CORS blocked origin:", origin);
       return callback(new Error("Socket CORS blocked origin"));
     },
     credentials: true,

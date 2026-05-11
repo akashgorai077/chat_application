@@ -14,6 +14,24 @@ import {
   getUserProfileThunk,
 } from "../../store/slice/user/userthunk";
 
+const DEFAULT_STUN = { urls: "stun:stun.l.google.com:19302" };
+
+const getIceServers = () => {
+  const raw = import.meta.env.VITE_ICE_SERVERS_JSON;
+  if (!raw || typeof raw !== "string") {
+    return [DEFAULT_STUN];
+  }
+  try {
+    const parsed = JSON.parse(raw);
+    if (Array.isArray(parsed) && parsed.length > 0) {
+      return parsed;
+    }
+  } catch {
+    /* use default */
+  }
+  return [DEFAULT_STUN];
+};
+
 const Home = () => {
   const dispatch = useDispatch();
   const { isAuthenticated, userProfile } = useSelector(
@@ -125,7 +143,7 @@ const Home = () => {
       setLocalStream(stream);
 
       const pc = new RTCPeerConnection({
-        iceServers: [{ urls: "stun:stun.l.google.com:19302" }],
+        iceServers: getIceServers(),
       });
       peerConnectionRef.current = pc;
 

@@ -1,5 +1,6 @@
 {
-  "dependencies": {
-    "multer": "^2.1.1"
+  "scripts": {
+    "build": "npm install --prefix client && npm run build --prefix client && npm install --prefix server",
+    "start": "npm start --prefix server"
   }
 }

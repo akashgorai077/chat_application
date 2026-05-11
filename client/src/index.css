@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+[data-theme="light"] {
+  --color-warning: var(--color-primary);
+  --color-warning-content: var(--color-primary-content);
+}
+
+[data-theme="dark"] {
+  --color-warning: oklch(82% 0.189 84.429);
+  --color-warning-content: oklch(41% 0.112 45.904);
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background:
+    radial-gradient(circle at top left, color-mix(in srgb, hsl(var(--p)) 18%, transparent), transparent 28rem),
+    linear-gradient(135deg, hsl(var(--b1)), hsl(var(--b2)));
+  color: hsl(var(--bc));
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+img,
+video {
+  max-width: 100%;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* GLASS EFFECT */
+
+.glass-card {
+  background: color-mix(in srgb, hsl(var(--b1)) 78%, transparent);
+  backdrop-filter: blur(18px);
+  border: 1px solid color-mix(in srgb, hsl(var(--bc)) 12%, transparent);
+}
+
+/* Dark-mode glass */
+[data-theme="dark"] .glass-card {
+  background: color-mix(in srgb, hsl(var(--b2)) 76%, transparent);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+/* SOFT SHADOW */
+.shadow-soft {
+  box-shadow:
+    0 10px 30px rgba(15, 23, 42, 0.08),
+    0 2px 10px rgba(15, 23, 42, 0.06);
+}
+
+[data-theme="dark"] .shadow-soft {
+  box-shadow:
+    0 18px 45px rgba(0, 0, 0, 0.45),
+    0 2px 14px rgba(0, 0, 0, 0.35);
+}
+
+.app-surface {
+  background:
+    linear-gradient(135deg, color-mix(in srgb, hsl(var(--b1)) 92%, white), hsl(var(--b2))),
+    hsl(var(--b1));
+}
+
+[data-theme="dark"] .app-surface {
+  background:
+    radial-gradient(circle at 15% 0%, rgba(34, 211, 238, 0.09), transparent 26rem),
+    linear-gradient(135deg, #020617 0%, #08111f 52%, #0f172a 100%);
+}
+
+.chat-surface {
+  background:
+    linear-gradient(color-mix(in srgb, hsl(var(--b1)) 78%, transparent), color-mix(in srgb, hsl(var(--b2)) 88%, transparent)),
+    radial-gradient(circle at 1px 1px, color-mix(in srgb, hsl(var(--bc)) 12%, transparent) 1px, transparent 0);
+  background-size: auto, 22px 22px;
+}
+
+[data-theme="dark"] .chat-surface {
+  background:
+    linear-gradient(rgba(2, 6, 23, 0.76), rgba(15, 23, 42, 0.92)),
+    radial-gradient(circle at 1px 1px, rgba(148, 163, 184, 0.11) 1px, transparent 0);
+  background-size: auto, 24px 24px;
+}
+
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-ring:focus-visible {
+  outline-color: hsl(var(--p));
+}
+
+/* SMOOTH TRANSITIONS */
+
+* {
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}

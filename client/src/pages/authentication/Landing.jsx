@@ -523,24 +523,28 @@ function Landing() {
       </main>
 
       {/* FOOTER */}
-<footer className="border-t border-base-300 bg-base-100/75 px-4 py-4 text-base-content backdrop-blur sm:px-6 lg:px-8">
-  <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-1.5 text-center">
+<footer className="border-t border-base-300 bg-base-100/75 px-4 py-3 text-base-content backdrop-blur sm:px-6 lg:px-8">
+  <div className="mx-auto flex max-w-7xl flex-col items-center justify-center gap-1 text-center">
 
-    {/* Logo + Brand */}
-    <div className="flex items-center gap-2 font-semibold text-base-content">
+    {/* Brand + Credits */}
+    <div className="flex items-center gap-1 text-[11px] font-medium text-base-content sm:text-sm">
       <img
         src={chatLogo}
         alt="WeChat Logo"
-        className="h-5 w-5 object-contain"
+        className="h-3.5 w-3.5 object-contain sm:h-4 sm:w-4"
       />
 
-      <span className="text-sm sm:text-base">
-        WeChat
+      <span>
+        WeChat |
+      </span>
+
+      <span className="text-base-content/70">
+        Made With ❤️ By Akash Gorai
       </span>
     </div>
 
     {/* Copyright */}
-    <p className="text-xs sm:text-sm text-base-content/60">
+    <p className="text-[10px] text-base-content/55 sm:text-[11px]">
       &copy; 2026 WeChat. All rights reserved.
     </p>
   </div>

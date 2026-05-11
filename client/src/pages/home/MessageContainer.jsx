@@ -194,22 +194,22 @@ const MessageContainer = ({ onStartCall, onOpenSidebar }) => {
             {canChat ? (
               <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
                 <button
-                  className="btn btn-ghost h-10 min-h-10 w-11 rounded-lg border border-warning/25 bg-warning/10 text-warning hover:border-warning/40 hover:bg-warning/15 sm:h-11 sm:min-h-11 sm:w-14"
+                  className="btn btn-ghost h-12 min-h-12 w-12 rounded-lg border border-warning/25 bg-warning/10 text-warning hover:border-warning/40 hover:bg-warning/15 sm:h-11 sm:min-h-11 sm:w-14"
                   onClick={() => onStartCall?.("audio")}
                   disabled={buttonLoading || !selectedUser?._id}
                   aria-label="Start audio call"
                 >
-                  <PhoneCall className="h-5 w-5" />
+                  <PhoneCall className="h-6 w-6 sm:h-5 sm:w-5" />
                 </button>
-            
+
                 <button
-                  className="btn btn-ghost h-10 min-h-10 w-11 rounded-lg border border-warning/25 bg-warning/10 text-warning hover:border-warning/40 hover:bg-warning/15 sm:h-11 sm:min-h-11 sm:w-14"
-                  onClick={() => onStartCall?.("video")}
-                  disabled={buttonLoading || !selectedUser?._id}
-                  aria-label="Start video call"
-                >
-                  <Video className="h-5 w-5" />
-                </button>
+  className="btn btn-ghost h-12 min-h-12 w-12 rounded-2xl border border-warning/25 bg-warning/10 text-warning hover:border-warning/40 hover:bg-warning/15 shadow-md transition-all duration-300 hover:scale-105 sm:h-11 sm:min-h-11 sm:w-14"
+  onClick={() => onStartCall?.("video")}
+  disabled={buttonLoading || !selectedUser?._id}
+  aria-label="Start video call"
+>
+  <Video className="h-6 w-6 sm:h-5 sm:w-5" />
+</button>
               </div>
             ) : null}
           </div>

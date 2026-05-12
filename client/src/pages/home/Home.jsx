@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import UserSidebar from "./UserSidebar";
 import MessageContainer from "./MessageContainer";
+import ringtoneSound from "../../assets/sounds/ringtone.mp3";
 import { useDispatch, useSelector } from "react-redux";
 import toast from "react-hot-toast";
 import {
@@ -48,8 +49,9 @@ const Home = () => {
   const peerConnectionRef = useRef(null);
   const localStreamRef = useRef(null);
   const pendingCandidatesRef = useRef([]);
-  const ringtoneContextRef = useRef(null);
-  const ringtoneIntervalRef = useRef(null);
+  // const ringtoneContextRef = useRef(null);
+  // const ringtoneIntervalRef = useRef(null);
+  const ringtoneAudioRef = useRef(null);
 
   const updateActiveCall = (updater) => {
     setActiveCall((prev) => {
@@ -73,43 +75,69 @@ const Home = () => {
     setRemoteStream(null);
   };
 
-  const stopIncomingRingtone = () => {
-    if (ringtoneIntervalRef.current) {
-      clearInterval(ringtoneIntervalRef.current);
-      ringtoneIntervalRef.current = null;
-    }
-    if (ringtoneContextRef.current) {
-      ringtoneContextRef.current.close().catch(() => {});
-      ringtoneContextRef.current = null;
-    }
-  };
+  // const stopIncomingRingtone = () => {
+  //   if (ringtoneIntervalRef.current) {
+  //     clearInterval(ringtoneIntervalRef.current);
+  //     ringtoneIntervalRef.current = null;
+  //   }
+  //   if (ringtoneContextRef.current) {
+  //     ringtoneContextRef.current.close().catch(() => {});
+  //     ringtoneContextRef.current = null;
+  //   }
+  // };
 
-  const playIncomingRingtone = () => {
-    stopIncomingRingtone();
-    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-    if (!AudioContextClass) return;
+  // const playIncomingRingtone = () => {
+  //   stopIncomingRingtone();
+  //   const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+  //   if (!AudioContextClass) return;
 
-    const context = new AudioContextClass();
-    ringtoneContextRef.current = context;
+  //   const context = new AudioContextClass();
+  //   ringtoneContextRef.current = context;
 
-    const createBeep = () => {
-      if (!ringtoneContextRef.current) return;
-      const oscillator = context.createOscillator();
-      const gain = context.createGain();
-      oscillator.type = "sine";
-      oscillator.frequency.setValueAtTime(880, context.currentTime);
-      gain.gain.setValueAtTime(0.0001, context.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.15, context.currentTime + 0.03);
-      gain.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + 0.35);
-      oscillator.connect(gain);
-      gain.connect(context.destination);
-      oscillator.start();
-      oscillator.stop(context.currentTime + 0.35);
-    };
+  //   const createBeep = () => {
+  //     if (!ringtoneContextRef.current) return;
+  //     const oscillator = context.createOscillator();
+  //     const gain = context.createGain();
+  //     oscillator.type = "sine";
+  //     oscillator.frequency.setValueAtTime(880, context.currentTime);
+  //     gain.gain.setValueAtTime(0.0001, context.currentTime);
+  //     gain.gain.exponentialRampToValueAtTime(0.15, context.currentTime + 0.03);
+  //     gain.gain.exponentialRampToValueAtTime(0.0001, context.currentTime + 0.35);
+  //     oscillator.connect(gain);
+  //     gain.connect(context.destination);
+  //     oscillator.start();
+  //     oscillator.stop(context.currentTime + 0.35);
+  //   };
 
-    createBeep();
-    ringtoneIntervalRef.current = setInterval(createBeep, 1200);
-  };
+  //   createBeep();
+  //   ringtoneIntervalRef.current = setInterval(createBeep, 1200);
+  // };
+
+const stopIncomingRingtone = () => {
+  if (ringtoneAudioRef.current) {
+    ringtoneAudioRef.current.pause();
+
+    ringtoneAudioRef.current.currentTime = 0;
+
+    ringtoneAudioRef.current = null;
+  }
+};
+
+const playIncomingRingtone = () => {
+  stopIncomingRingtone();
+
+  ringtoneAudioRef.current = new Audio(ringtoneSound);
+
+  ringtoneAudioRef.current.loop = true;
+
+  ringtoneAudioRef.current.volume = 0.5;
+
+  ringtoneAudioRef.current.play().catch((err) => {
+    console.log("Ringtone blocked:", err);
+  });
+};
+
+
 
   const clearConnection = () => {
     if (peerConnectionRef.current) {

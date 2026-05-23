@@ -104,7 +104,7 @@ const Login = () => {
                   <label htmlFor="login-username" className="mb-2 block text-sm font-semibold text-base-content/75">
                     Username
                   </label>
-                  <div className="flex h-12 items-center rounded-lg border border-base300 dark:border-amber-400 bg-base-100/85 px-3 shadow-sm transition-all focus-within:border-primary focus-within:bg-base-100 focus-within:ring-2 focus-within:ring-primary/15">
+                  <div className="flex h-12 items-center rounded-lg border border-y-amber-400 bg-base-100/85 px-3 shadow-sm transition-all focus-within:border-primary focus-within:bg-base-100 focus-within:ring-2 focus-within:ring-primary/15">
                     <FaUser className="mr-3 shrink-0 text-base-content/40" />
                     <input
                       id="login-username"
@@ -124,7 +124,7 @@ const Login = () => {
                   <label htmlFor="login-password" className="mb-2 block text-sm font-semibold text-base-content/75">
                     Password
                   </label>
-                  <div className="flex h-12 items-center rounded-lg border border-base300 dark:border-amber-400 bg-base-100/85 px-3 shadow-sm transition-all focus-within:border-primary focus-within:bg-base-100 focus-within:ring-2 focus-within:ring-primary/15">
+                  <div className="flex h-12 items-center rounded-lg border border-y-amber-400 bg-base-100/85 px-3 shadow-sm transition-all focus-within:border-primary focus-within:bg-base-100 focus-within:ring-2 focus-within:ring-primary/15">
                     <FaKey className="mr-3 shrink-0 text-base-content/40" />
                     <input
                       id="login-password"

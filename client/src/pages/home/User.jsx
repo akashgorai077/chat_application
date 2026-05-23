@@ -55,7 +55,22 @@ const User = ({
 
       {actionButtonLabel ? (
         <button
-          className="btn btn-xs btn-primary ml-auto shrink-0 rounded-lg"
+          className=" ml-auto shrink-0
+  rounded-xl
+  bg-gradient-to-br
+  from-cyan-500
+  via-blue-500
+  to-violet-600
+  px-4 py-1.5
+  text-[11px] font-medium
+  text-white
+  shadow-lg
+  transition-all duration-300
+  hover:-translate-y-0.5
+  hover:shadow-violet-500/25
+  active:scale-95
+  disabled:cursor-not-allowed
+  disabled:opacity-50"
           onClick={(e) => {
             e.stopPropagation();
             onActionClick?.(userDetails);

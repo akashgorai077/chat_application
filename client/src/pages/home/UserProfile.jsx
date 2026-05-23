@@ -101,7 +101,7 @@ const UserProfile = () => {
           <div className="mx-auto max-w-xl glass-card rounded-lg p-5 shadow-soft sm:p-6 md:p-8">
             <div className="flex flex-col items-center text-center gap-3">
               <div className="avatar">
-                <div className="w-24 rounded-full ring-2 ring-[#7480FF] sm:w-28">
+                <div className="w-24 rounded-full ring-2 ring-blue-500 sm:w-28">
                   <img src={profileUser?.avatar} alt={profileUser?.username} />
                 </div>
               </div>

@@ -20,8 +20,16 @@ router.post("/logout", isAuthenticated, logout); // ✅ Use imported function
 router.get("/get-profile", isAuthenticated, getProfile); // ✅ Use imported function
 router.get("/get-other-users", isAuthenticated, getOtherUsers); // ✅ Use imported function
 router.post("/friend-request/:userId/send", isAuthenticated, sendFriendRequest);
-router.post("/friend-request/:userId/cancel", isAuthenticated, cancelFriendRequest);
-router.post("/friend-request/:userId/accept", isAuthenticated, acceptFriendRequest);
+router.post(
+  "/friend-request/:userId/cancel",
+  isAuthenticated,
+  cancelFriendRequest,
+);
+router.post(
+  "/friend-request/:userId/accept",
+  isAuthenticated,
+  acceptFriendRequest,
+);
 router.post("/friend-request/:userId/deny", isAuthenticated, denyFriendRequest);
 router.post("/friend/:userId/unfriend", isAuthenticated, unfriendUser);
 

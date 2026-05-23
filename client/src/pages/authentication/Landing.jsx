@@ -15,6 +15,7 @@ import {
 
 import Navbar from "./Navbar";
 import chatLogo from "../../assets/chat.png";
+import { BsFillSendFill } from "react-icons/bs";
 
 const highlights = [
   {
@@ -212,7 +213,7 @@ function Landing() {
 
         <div className="max-w-[82%] rounded-2xl rounded-bl-md bg-slate-800 px-3 py-2.5 shadow-md sm:max-w-[75%] sm:px-4 sm:py-3">
           <p className="text-sm leading-6 text-slate-200">
-            Hey, are you available tonight for the final UI discussion?
+            Hey, can you share the latest analytics concept for tomorrow’s client presentation?
           </p>
 
           <span className="mt-1 block text-[11px] text-slate-400">
@@ -226,7 +227,8 @@ function Landing() {
 
         <div className="max-w-[82%] rounded-2xl rounded-br-md bg-gradient-to-r from-cyan-500 to-blue-500 px-3 py-2.5 shadow-lg sm:max-w-[75%] sm:px-4 sm:py-3">
           <p className="text-sm leading-6 text-white">
-            Yes, send me the latest dashboard screens first.
+            Sure, I’ve attached the updated dashboard illustration and UI overview.
+
           </p>
 
           <span className="mt-1 block text-[11px] text-cyan-100/80">
@@ -236,7 +238,7 @@ function Landing() {
       </div>
 
       {/* Attachment */}
-      <div className="flex justify-end">
+      {/* <div className="flex justify-end">
 
         <div className="w-full max-w-[240px] overflow-hidden rounded-2xl border border-slate-700 bg-slate-900 shadow-lg">
 
@@ -252,7 +254,30 @@ function Landing() {
             </p>
           </div>
         </div>
-      </div>
+      </div> */}
+      {/* Attachment */}
+<div className="flex justify-end">
+  <div className="w-full max-w-[240px] overflow-hidden rounded-2xl border border-slate-700 bg-slate-900 shadow-lg">
+
+    <div className="flex h-40 items-center justify-center bg-slate-700 p-2">
+      <img
+        src="/dashboard-preview.png"
+        alt="Dashboard Preview"
+        className="max-h-full max-w-full object-contain"
+      />
+    </div>
+
+    <div className="p-3">
+      <p className="text-sm font-medium text-slate-200">
+        ui-analytics-preview.png
+      </p>
+
+      <p className="mt-1 text-xs text-slate-400">
+        2.1 MB • UI Illustration
+      </p>
+    </div>
+  </div>
+</div>
 
       {/* Call Status */}
       <div className="flex justify-center">
@@ -267,7 +292,7 @@ function Landing() {
 
         <div className="max-w-[82%] rounded-2xl rounded-br-md bg-gradient-to-r from-violet-500 to-fuchsia-500 px-3 py-2.5 shadow-lg sm:max-w-[75%] sm:px-4 sm:py-3">
           <p className="text-sm leading-6 text-white">
-            Perfect. I’ll review the animations before tomorrow’s meeting.
+            Looks great. I’ll review the dashboard flow and animations before the meeting.
           </p>
 
           <span className="mt-1 block text-[11px] text-violet-100/80">
@@ -295,22 +320,7 @@ function Landing() {
         >
           Type your message...
         </div>
-
-        {/* Send */}
-        <button
-          className="
-            grid h-11 w-11 shrink-0 place-items-center
-            rounded-full
-            bg-gradient-to-r from-cyan-500 to-blue-500
-            text-white
-            shadow-lg
-            transition-all duration-300
-            hover:scale-105
-          "
-        >
-          <MessageCircle className="h-5 w-5" />
-        </button>
-         {/* Attach */}
+           {/* Attach */}
         <button
           className="
             grid h-11 w-11 shrink-0 place-items-center
@@ -323,6 +333,27 @@ function Landing() {
         >
           <Paperclip className="h-5 w-5" />
         </button>
+
+        {/* Send */}
+       <button
+  className="
+    grid h-11 w-11 shrink-0 place-items-center
+    rounded-full
+    bg-gradient-to-br
+    from-cyan-500
+    via-blue-500
+    to-indigo-600
+    text-white
+    shadow-lg
+    transition-all duration-300
+    hover:scale-105
+    hover:shadow-cyan-500/30
+    active:scale-95
+  "
+>
+  <BsFillSendFill className="h-4 w-4 translate-x-[1px]" />
+</button>
+      
       </div>
     </div>
   </div>

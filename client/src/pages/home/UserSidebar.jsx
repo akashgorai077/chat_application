@@ -389,7 +389,7 @@ const UserSidebar = ({ isMobileOpen = true, onCloseMobile }) => {
         isMobileOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
-      <button
+      {/* <button
         className="mx-3 mt-3 flex min-w-0 items-center gap-2 rounded-lg px-3 py-2 text-left text-lg font-semibold text-primary hover:bg-base-200/80 focus-ring"
         onClick={handleGoHome}
       >
@@ -402,8 +402,45 @@ const UserSidebar = ({ isMobileOpen = true, onCloseMobile }) => {
 </span>
 
         <span className="truncate">WeChat</span>
-      </button>
+      </button> */}
+      
+    {/* <button
+  className="mx-3 mt-3 flex min-w-0 items-center gap-3 rounded-xl px-3 py-3 text-left text-lg font-semibold text-primary hover:bg-base-200/80 transition-all duration-300 focus-ring "
+  onClick={handleGoHome}
+>
+  <span className="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-primary/20 via-secondary/10 to-warning/20 border border-primary/20 shadow-lg overflow-hidden">
+    <img
+      src={chatLogo}
+      alt="WeChat Logo"
+      className="h-8 w-8 object-contain drop-shadow-md"
+    />
+  </span>
 
+<span className="truncate text-2xl font-bold tracking-wide text-primary ">
+  WeChat
+</span>
+</button> */}
+<button
+  className="mx-3 mt-3 flex min-w-0 items-center gap-4 rounded-2xl px-4 py-3 text-left transition-all duration-300 hover:bg-base-200/40 focus-ring"
+  onClick={handleGoHome}
+>
+  {/* Logo Container */}
+  <span className="grid h-14 w-14 shrink-0 place-items-center rounded-2xl border border-base-300/40 bg-base-100/70 shadow-lg backdrop-blur-xl overflow-hidden transition-all duration-300 hover:scale-105">
+    <img
+      src={chatLogo}
+      alt="WeChat Logo"
+      className="h-9 w-9 object-contain drop-shadow-md"
+    />
+  </span>
+
+  {/* Logo Text */}
+  <div className="flex flex-col leading-none">
+    <span className="truncate text-2xl font-bold tracking-wide text-primary">
+      WeChat
+    </span>
+  </div>
+</button>
+{/* Search Bar */}
       <div className="p-3">
         <label className="w-full flex items-center gap-2 input bg-base-100/80 backdrop-blur-lg border border-base-300 rounded-lg focus-within:border-primary focus-within:ring-2 focus-within:ring-primary/15">
           <input

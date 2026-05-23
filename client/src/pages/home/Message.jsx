@@ -70,8 +70,16 @@ const Message = ({ messageDetails, onMediaLoad }) => {
           <div
             className={`rounded-lg overflow-hidden shadow-soft border ${
               isSender
-                ? "bg-primary text-primary-content border-primary/30"
-                : "bg-base-100/90 text-base-content border-base-300"
+                ? "bg-gradient-to-br from-cyan-500 to-blue-600 text-white border-cyan-400/30"
+                : `
+                bg-gradient-to-br from-white/20 to-white/5
+dark:from-white/10 dark:to-white/[0.03]
+backdrop-blur-xl
+border border-white/10
+text-base-content
+rounded-bl-sm
+shadow-black
+                `
             }`}
           >
             {isImage ? (
@@ -157,16 +165,18 @@ const Message = ({ messageDetails, onMediaLoad }) => {
             ${
               isSender
                 ? `
-                  bg-primary
-                  text-primary-content
+                  bg-gradient-to-br from-cyan-500 to-blue-600
+                  text-white
                   rounded-br-sm
                 `
                 : `
-                  bg-base-100/90
-                  backdrop-blur-lg
-                  border border-base-300
-                  text-base-content
-                  rounded-bl-sm
+         bg-gradient-to-br from-white/20 to-white/5
+dark:from-white/10 dark:to-white/[0.03]
+backdrop-blur-xl
+border border-white/10
+text-base-content
+rounded-bl-sm
+shadow-black
                 `
             }
           `}

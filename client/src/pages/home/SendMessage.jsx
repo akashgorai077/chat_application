@@ -58,14 +58,6 @@ const SendMessage = ({ canChat }) => {
         onChange={handleFileSelected}
       />
       <button
-        onClick={handleSendMessage}
-        className="btn btn-primary h-11 min-h-11 w-11 shrink-0 rounded-lg border-warning/20 p-0 shadow-md transition-all duration-300 hover:shadow-lg sm:w-12"
-        aria-label="Send message"
-        disabled={!canChat}
-      >
-        <BsFillSendFill />
-      </button>
-<button
         onClick={handlePickFile}
         className="btn btn-ghost h-11 min-h-11 w-11 shrink-0 rounded-lg p-0 text-warning hover:bg-warning/10 hover:text-warning sm:w-12"
         aria-label="Attach media"
@@ -74,10 +66,37 @@ const SendMessage = ({ canChat }) => {
       >
         <FiPaperclip className="text-xl"  />
       </button>
-
-
-
-
+      <button
+  onClick={handleSendMessage}
+  className="
+    btn
+    h-11 min-h-11 w-11 shrink-0
+    rounded-xl
+    border-0
+    bg-gradient-to-br
+    from-cyan-500
+    via-blue-500
+    to-indigo-600
+    p-0
+    text-white
+    shadow-lg
+    transition-all
+    duration-300
+    hover:scale-105
+    hover:from-cyan-400
+    hover:via-blue-500
+    hover:to-indigo-500
+    hover:shadow-cyan-500/25
+    active:scale-95
+    disabled:cursor-not-allowed
+    disabled:opacity-50
+    sm:w-12
+  "
+  aria-label="Send message"
+  disabled={!canChat}
+>
+  <BsFillSendFill className="text-sm" />
+</button>
       </div>
     </div>
   );

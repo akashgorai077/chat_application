@@ -112,7 +112,7 @@ const Signup = () => {
           </section>
 
           <section>
-            <div className="glass-card mx-auto w-full max-w-2xl overflow-hidden rounded-lg shadow-soft">
+            <div className="glass-card mx-auto w-full max-w-2xl  overflow-hidden rounded-lg shadow-soft">
               <div className="border-b border-base-300 bg-base-100/45 px-5 py-5 sm:px-8 sm:py-6">
                 <div className="mb-5 flex items-center gap-3">
                   <div className="relative grid h-11 w-11 place-items-center rounded-lg bg-primary text-primary-content">
@@ -135,7 +135,7 @@ const Signup = () => {
                   <label htmlFor="signup-full-name" className="mb-2 block text-sm font-semibold text-base-content/75">
                     Full name
                   </label>
-                  <div className="flex h-12 items-center rounded-lg border border-base-300 dark:border-amber-400 bg-base-100/85 px-3 shadow-sm transition-all focus-within:border-primary focus-within:bg-base-100 focus-within:ring-2 focus-within:ring-primary/15">
+                  <div className="flex h-12 items-center rounded-lg  border border-y-amber-400 bg-base-100/85 px-3 shadow-sm transition-all focus-within:border-primary focus-within:bg-base-100 focus-within:ring-2 focus-within:ring-primary/15">
                     <FaUser className="mr-3 shrink-0 text-base-content/40" />
                     <input
                       id="signup-full-name"
@@ -155,7 +155,7 @@ const Signup = () => {
                   <label htmlFor="signup-username" className="mb-2 block text-sm font-semibold text-base-content/75">
                     Username
                   </label>
-                  <div className="flex h-12 items-center rounded-lg border border-base-300 dark:border-amber-400 bg-base-100/85 px-3 shadow-sm transition-all focus-within:border-primary focus-within:bg-base-100 focus-within:ring-2 focus-within:ring-primary/15">
+                  <div className="flex h-12 items-center rounded-lg  border border-y-amber-400 bg-base-100/85 px-3 shadow-sm transition-all focus-within:border-primary focus-within:bg-base-100 focus-within:ring-2 focus-within:ring-primary/15">
                     <FaUser className="mr-3 shrink-0 text-base-content/40" />
                     <input
                       id="signup-username"
@@ -175,7 +175,7 @@ const Signup = () => {
                   <label htmlFor="signup-email" className="mb-2 block text-sm font-semibold text-base-content/75">
                     Email
                   </label>
-                  <div className="flex h-12 items-center rounded-lg border border-base-300 dark:border-amber-400 bg-base-100/85 px-3 shadow-sm transition-all focus-within:border-primary focus-within:bg-base-100 focus-within:ring-2 focus-within:ring-primary/15">
+                  <div className="flex h-12 items-center rounded-lg border border-y-amber-400 bg-base-100/85 px-3 shadow-sm transition-all focus-within:border-primary focus-within:bg-base-100 focus-within:ring-2 focus-within:ring-primary/15">
                     <FaEnvelope className="mr-3 shrink-0 text-base-content/40" />
                     <input
                       id="signup-email"
@@ -195,7 +195,7 @@ const Signup = () => {
                   <label htmlFor="signup-password" className="mb-2 block text-sm font-semibold text-base-content/75">
                     Password
                   </label>
-                  <div className="flex h-12 items-center rounded-lg border border-base-300 dark:border-amber-400 bg-base-100/85 px-3 shadow-sm transition-all focus-within:border-primary focus-within:bg-base-100 focus-within:ring-2 focus-within:ring-primary/15">
+                  <div className="flex h-12 items-center rounded-lg border border-y-amber-400 bg-base-100/85 px-3 shadow-sm transition-all focus-within:border-primary focus-within:bg-base-100 focus-within:ring-2 focus-within:ring-primary/15">
                     <FaKey className="mr-3 shrink-0 text-base-content/40" />
                     <input
                       id="signup-password"
@@ -223,7 +223,7 @@ const Signup = () => {
                   <label htmlFor="signup-confirm-password" className="mb-2 block text-sm font-semibold text-base-content/75">
                     Confirm password
                   </label>
-                  <div className="flex h-12 items-center rounded-lg border border-base-300 dark:border-amber-400 bg-base-100/85 px-3 shadow-sm transition-all focus-within:border-primary focus-within:bg-base-100 focus-within:ring-2 focus-within:ring-primary/15">
+                  <div className="flex h-12 items-center rounded-lg border border-y-amber-400 bg-base-100/85 px-3 shadow-sm transition-all focus-within:border-primary focus-within:bg-base-100 focus-within:ring-2 focus-within:ring-primary/15">
                     <FaKey className="mr-3 shrink-0 text-base-content/40" />
                     <input
                       id="signup-confirm-password"

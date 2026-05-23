@@ -28,7 +28,6 @@ const getIceServers = () => {
       return parsed;
     }
   } catch {
-    /* use default */
   }
   return [DEFAULT_STUN];
 };
